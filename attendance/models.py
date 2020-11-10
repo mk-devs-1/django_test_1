@@ -22,8 +22,8 @@ class SubmitAttendance(models.Model):
         (6, '沖縄'),
     )
     IN_OUT = (
-        (1, 'IN'),
-        (0, 'OUT'),
+        (1, '出勤'),
+        (0, '退勤'),
     )
 
     staff = models.ForeignKey(
