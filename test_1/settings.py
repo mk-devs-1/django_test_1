@@ -3,7 +3,9 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
+PROJECT_NAME = os.path.basename(BASE_DIR)
+#STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')] 
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
@@ -12,11 +14,16 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'ti7#bndgq6(&*y(n(m=zd$u5m55t_nbd1ab3fu76^feq5=rb+^'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
-    '127.0.0.1',
-]
+        '3.112.136.88',
+        '103.5.140.1',
+        '103.5.140.134',
+        'nochoice.work',
+        ]
+
+#ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -68,8 +75,14 @@ WSGI_APPLICATION = 'test_1.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        #'ENGINE': 'django.db.backends.sqlite3',
+        #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'masa',
+        'USER': 'masa',
+        'PASSWORD': 'Zaq12wsx',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
 
